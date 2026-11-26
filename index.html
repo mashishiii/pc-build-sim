@@ -59,38 +59,22 @@ button.main{background:linear-gradient(135deg,#0d9488,#7c3aed);border-color:tran
   #controls button{min-height:40px;padding:6px 10px}
 }
 
-/* MSI ロゴ（店頭デモ用・右上） */
-#brand{position:fixed;z-index:5;top:calc(20px + env(safe-area-inset-top));right:calc(26px + env(safe-area-inset-right));height:clamp(64px,11vh,140px);pointer-events:none;
-  filter:drop-shadow(0 4px 18px rgba(0,0,0,.65)) drop-shadow(0 0 2px rgba(0,0,0,.5))}
-#brand svg{height:100%;width:auto;display:block}
 #hint{pointer-events:none}
 @media (max-width:1500px){#hint{bottom:calc(96px + env(safe-area-inset-bottom))}}
 #controls button{min-height:44px}
 #loop.on{background:rgba(225,29,46,.22);border-color:#ff3346;color:#fff}
-@media (min-width:601px) and (max-width:1000px){#brand{height:56px}#panel{width:min(450px,calc(100vw - 260px))}}
 @media (max-width:600px){
-  #brand{top:calc(8px + env(safe-area-inset-top));right:calc(12px + env(safe-area-inset-right));height:54px}
-  #panel{top:calc(70px + env(safe-area-inset-top))}
   #controls{grid-template-columns:repeat(6,1fr)}
   #prev,#play,#next{grid-column:span 2}
   #restart{grid-column:1 / span 3}
   #loop{grid-column:4 / span 3;min-height:44px}
   .speed{grid-column:1 / span 6}
 }
-@media (max-height:500px) and (min-width:601px){
-  #brand{top:calc(8px + env(safe-area-inset-top));right:calc(14px + env(safe-area-inset-right));height:52px}
-}
 </style>
 </head>
 <body>
 <div id="bg"></div>
 <canvas id="c" tabindex="0"></canvas>
-<div id="brand" aria-label="MSI"><svg viewBox="0 0 330 104" xmlns="http://www.w3.org/2000/svg" role="img">
-  <title>MSI</title>
-  <defs><linearGradient id="bgR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff3346"/><stop offset="1" stop-color="#c3101f"/></linearGradient></defs>
-  <path d="M16 20 L76 6 L64 32 L92 42 L58 62 L66 96 L36 76 L10 96 L20 58 L0 40 Z" fill="url(#bgR)"/>
-  <text x="104" y="86" fill="#ffffff" font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-style="italic" font-size="96" letter-spacing="-2">msi</text>
-</svg></div>
 <div id="panel" class="glass">
   <div class="app"><span>MSI 自作PC 組み立てシミュレーター</span><span id="time">0:00 / 1:23</span></div>
   <div class="stepno" id="stepno">STEP 1 / 11</div>
